@@ -54,8 +54,8 @@ local core_map = {
 	["v|<"] = map_cmd("<gv"):with_desc("editv: Decrease indent"),
 	["v|>"] = map_cmd(">gv"):with_desc("editv: Increase indent"),
 	-- others new add
-	["n|gor"] = map_cmd(":GoRun<CR>"),
-	["n|got"] = map_cmd(":GoTestFunc<CR>"),
+	["n|Gor"] = map_cmd(":GoRun<CR>"),
+	["n|Got"] = map_cmd(":GoTestFunc<CR>"),
 	["n|L"] = map_cmd("g_"),
 	["v|L"] = map_cmd("g_"),
 	["n|H"] = map_cmd("^"),
