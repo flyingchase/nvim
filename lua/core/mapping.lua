@@ -61,7 +61,7 @@ local core_map = {
 	["n|H"] = map_cmd("^"),
 	["v|H"] = map_cmd("^"),
 	["i|<enter>"] = map_cmd("s<C-R>=v:lua.enter_key()<CR>!"):with_noremap():with_silent(),
-	["i|<C-i>"] = map_cmd("<Esc>zzi<CR>"),
+	-- ["i|<C-i>"] = map_cmd("<Esc>zzi<CR>"),
 	["n|<leader>i"] = map_cmd("<C-]>"),
 	["n|<leader>o"] = map_cmd("<C-t>"),
 }
