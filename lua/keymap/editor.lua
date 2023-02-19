@@ -47,14 +47,14 @@ local plug_map = {
 		:with_noremap()
 		:with_expr()
 		:with_desc("edit: Toggle comment for block"),
-	["n|gc"] = map_cmd("<Plug>(comment_toggle_linewise)")
-		:with_silent()
-		:with_noremap()
-		:with_desc("edit: Toggle comment for line with operator"),
-	["n|gb"] = map_cmd("<Plug>(comment_toggle_blockwise)")
-		:with_silent()
-		:with_noremap()
-		:with_desc("edit: Toggle comment for block with operator"),
+	-- ["n|gc"] = map_cmd("<Plug>(comment_toggle_linewise)")
+	-- 	:with_silent()
+	-- 	:with_noremap()
+	-- 	:with_desc("edit: Toggle comment for line with operator"),
+	-- ["n|gb"] = map_cmd("<Plug>(comment_toggle_blockwise)")
+	-- 	:with_silent()
+	-- 	:with_noremap()
+	-- 	:with_desc("edit: Toggle comment for block with operator"),
 	["x|gc"] = map_cmd("<Plug>(comment_toggle_linewise_visual)")
 		:with_silent()
 		:with_noremap()
@@ -84,7 +84,7 @@ local plug_map = {
 	["n|<leader>w"] = map_cu("HopWord"):with_noremap():with_desc("jump: Goto word"),
 	["n|<leader>j"] = map_cu("HopLine"):with_noremap():with_desc("jump: Goto line"),
 	["n|<leader>k"] = map_cu("HopLine"):with_noremap():with_desc("jump: Goto line"),
-	["n|<leader>c"] = map_cu("HopChar1"):with_noremap():with_desc("jump: Goto one char"),
+	-- ["n|<leader>c"] = map_cu("HopChar1"):with_noremap():with_desc("jump: Goto one char"),
 	["n|<leader>cc"] = map_cu("HopChar2"):with_noremap():with_desc("jump: Goto two chars"),
 
 	-- Plugin: treehopper
