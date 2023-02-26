@@ -11,7 +11,7 @@ local core_map = {
 	["n|D"] = map_cmd("d$"):with_desc("edit: Delete text to EOL"),
 	["n|n"] = map_cmd("nzzzv"):with_noremap():with_desc("edit: Next search result"),
 	["n|N"] = map_cmd("Nzzzv"):with_noremap():with_desc("edit: Prev search result"),
-	["n|J"] = map_cmd("mzJ`z"):with_noremap():with_desc("edit: Join next line"),
+--	["n|J"] = map_cmd("mzJ`z"):with_noremap():with_desc("edit: Join next line"),
 	["n|<Esc>"] = map_cr("noh"):with_noremap():with_silent():with_desc("edit: Clear search highlight"),
 	["n|<C-h>"] = map_cmd("<C-w>h"):with_noremap():with_desc("window: Focus left"),
 	["n|<C-l>"] = map_cmd("<C-w>l"):with_noremap():with_desc("window: Focus right"),
@@ -23,11 +23,11 @@ local core_map = {
 	["t|<C-k>"] = map_cmd("<Cmd>wincmd k<CR>"):with_silent():with_noremap():with_desc("window: Focus up"),
 	["n|<A-[>"] = map_cr("vertical resize -5"):with_silent():with_desc("window: Resize -5 vertically"),
 	["n|<A-]>"] = map_cr("vertical resize +5"):with_silent():with_desc("window: Resize +5 vertically"),
-	["n|<A-;>"] = map_cr("resize -2"):with_silent():with_desc("window: Resize -2 horizontally"),
+	["n|<A-.>"] = map_cr("resize -2"):with_silent():with_desc("window: Resize -2 horizontally"),
 	["n|<A-'>"] = map_cr("resize +2"):with_silent():with_desc("window: Resize +2 horizontally"),
 	["n|<C-q>"] = map_cr("wq"):with_desc("edit: Save file and quit"),
 	["n|<A-S-q>"] = map_cr("q!"):with_desc("edit: Force quit"),
-	["n|<leader>o"] = map_cr("setlocal spell! spelllang=en_us"):with_desc("edit: Toggle spell check"),
+--	["n|<leader>o"] = map_cr("setlocal spell! spelllang=en_us"):with_desc("edit: Toggle spell check"),
 	["n|tn"] = map_cr("tabnew"):with_noremap():with_silent():with_desc("tab: Create a new tab"),
 	["n|tk"] = map_cr("tabnext"):with_noremap():with_silent():with_desc("tab: Move to next tab"),
 	["n|tj"] = map_cr("tabprevious"):with_noremap():with_silent():with_desc("tab: Move to previous tab"),
@@ -49,10 +49,21 @@ local core_map = {
 		:with_noremap()
 		:with_desc("edit: Complete path of current file"),
 	-- Visual mode
-	["v|J"] = map_cmd(":m '>+1<CR>gv=gv"):with_desc("edit: Move this line down"),
-	["v|K"] = map_cmd(":m '<-2<CR>gv=gv"):with_desc("edit: Move this line up"),
-	["v|<"] = map_cmd("<gv"):with_desc("edit: Decrease indent"),
-	["v|>"] = map_cmd(">gv"):with_desc("edit: Increase indent"),
+	["v|J"] = map_cmd(":m '>+1<CR>gv=gv"):with_desc("editv: Move this line down"),
+	["v|K"] = map_cmd(":m '<-2<CR>gv=gv"):with_desc("editv: Move this line up"),
+	["v|<"] = map_cmd("<gv"):with_desc("editv: Decrease indent"),
+	["v|>"] = map_cmd(">gv"):with_desc("editv: Increase indent"),
+	-- others new add
+	["n|gor"] = map_cmd(":GoRun<CR>"),
+	["n|got"] = map_cmd(":GoTestFunc<CR>"),
+	["n|L"] = map_cmd("g_"),
+	["v|L"] = map_cmd("g_"),
+	["n|H"] = map_cmd("^"),
+	["v|H"] = map_cmd("^"),
+	["i|<enter>"] = map_cmd("s<C-R>=v:lua.enter_key()<CR>!"):with_noremap():with_silent(),
+	["i|<C-i>"] = map_cmd("<Esc>zzi<CR>"),
+	["n|<leader>i"] = map_cmd("<C-]>"),
+	["n|<leader>o"] = map_cmd("<C-t>"),
 }
 
 bind.nvim_load_mapping(core_map)
